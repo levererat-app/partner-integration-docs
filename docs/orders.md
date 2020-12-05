@@ -18,6 +18,7 @@
 | `orderBy`          |    No     | Sort results based on column  | ` created_at`  ` updated_at` ` must_be_delivered_at` ` pickup_ready_at`  ` accepted_by_deliverer_at` ` picked_up_by_deliverer_at` ` delivered_at` | `created_at` |
 | `orderByDirection` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
+
 #### Example response `https://api.levererat.app/partners/v1/orders`
 
 ```json
