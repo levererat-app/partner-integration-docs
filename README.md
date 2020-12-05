@@ -10,7 +10,7 @@ We provide a RESTful API for our partners.
 * [Status codes](#status-codes)
 * [HTTP 400 Error codes](#error-codes)
 * [Authenticate](#authenticate)
-* [Routes](#routes)
+* [Feature documentation](#features)
 
 ### <a id="endpoint"></a> Endpoint
 
@@ -52,12 +52,10 @@ All requests to the endpoint requires an `Access-Token` provided in your request
 
 The `Access-Token` is bound to your account and is accessible after you sign in for the first time.
 
-### <a id="routes"></a> Routes
+### <a id="features"></a> Feature documentation
 
-| method | namespace | uri              | docs                              |
-| ------ | --------- | ---------------- | --------------------------------- |
-| `GET`  | order     | `/orders`        | [Read more](docs/orders.md#index) |
-| `POST` | order     | `/orders`        | [Read more](docs/orders.md#store) |
-| `GET`  | order     | `/orders/{uuid}` | [Read more](docs/orders.md#show)  |
+| namespace | Base uri  | Docs and examples           |
+| --------- | --------- | --------------------------- |
+| order     | `/orders` | [Read more](docs/orders.md) |
 
 .

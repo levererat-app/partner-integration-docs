@@ -2,11 +2,11 @@
 
 ## <a id="routes"></a> Routes
 
-| method | namespace | uri              | docs                              |
-| ------ | --------- | ---------------- | --------------------------------- |
-| `GET`  | order     | `/orders`        | [Read more](#index) |
-| `POST` | order     | `/orders`        | [Read more](#store) |
-| `GET`  | order     | `/orders/{uuid}` | [Read more](#show)  |
+| method | uri                |
+| :----- | :----------------- |
+| `GET`  | `/orders`          |
+| `GET`  | `/orders/{uuidv4}` |
+| `POST` | `/orders`          |
 
 ### <a id="index"></a> `GET /orders` 
 
@@ -18,7 +18,7 @@
 | `orderBy`          |    No     | Sort results based on column  | ` created_at`  ` updated_at` ` must_be_delivered_at` ` pickup_ready_at`  ` accepted_by_deliverer_at` ` picked_up_by_deliverer_at` ` delivered_at` | `created_at` |
 | `orderByDirection` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
-##### Example response
+#### Example response `https://api.levererat.app/partners/v1/orders`
 
 ```json
 {
@@ -81,6 +81,44 @@
         "per_page": 15,
         "to": 1,
         "total": 1
+    }
+}
+```
+
+### <a id="show"></a> `GET /orders/{uuidv4}` 
+
+
+#### Parameters
+
+_No parameters_
+
+#### Example response `https://api.levererat.app/partners/v1/orders/922b...`
+
+```json
+{
+    "order": {
+        "uuid": "922bc46f-aef1-4ab0-b5a6-e97b3fcfe824",
+        "simple_order_number": "88-12-2",
+        "status": "pending",
+        "payment_method": "levererat_swish",
+        "company_swish_ref_id": null,
+        "company_invoice_ref_id": null,
+        "company_card_ref_id": null,
+        "payload": "All on a little different. But if I'm not the smallest notice of her voice, and see how he can thoroughly enjoy The pepper when he sneezes; For he can thoroughly enjoy The pepper when he sneezes.",
+        "contact_name": "Lance",
+        "contact_phone": "+46701474417",
+        "contact_address": "2188 Rashad Squares\nPort Emmanuelshire, OH 48458-8288",
+        "creator_name": "Hortense Hodkiewicz",
+        "creator_phone": "+46701474417",
+        "creator_address": "622 Zulauf Harbor",
+        "must_be_delivered_at": "2020-12-05 13:22:49",
+        "pickup_ready_at": "2020-12-05 13:12:49",
+        "accepted_by_deliverer_at": null,
+        "picked_up_by_deliverer_at": null,
+        "delivered_at": null,
+        "contact_unidentified_at": null,
+        "created_at": "2020-12-05 12:12:49",
+        "updated_at": "2020-12-05 12:12:49"
     }
 }
 ```
