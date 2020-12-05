@@ -19,6 +19,7 @@
 | `orderByDirection` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
 
+
 #### Example response `https://api.levererat.app/partners/v1/orders`
 
 ```json
@@ -120,6 +121,57 @@ _No parameters_
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:49",
         "updated_at": "2020-12-05 12:12:49"
+    }
+}
+```
+
+### <a id="show"></a> `POST /orders` 
+
+#### Parameters
+
+| Name                     |                Required?                 | Description                                                  |                       possible values                        |             Default              |
+| ------------------------ | :--------------------------------------: | ------------------------------------------------------------ | :----------------------------------------------------------: | :------------------------------: |
+| `contact_name`           |                   Yes                    | Name of end customer                                         |                        `string(191)`                         |                -                 |
+| `contact_address`        |                   Yes                    | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |                        `string(191)`                         |                -                 |
+| `contact_phone`          |                   Yes                    | E164 phone number format (+467xxxxx) of end customer         |                        `string(191)`                         |                -                 |
+| `payload`                |                   yes                    | Content of what is going to be delivered, this text is not parsed by levererat.app and will be visible to our deliverers |                         `mediumText`                         |                -                 |
+| `pickup_ready_at`        |                   yes                    | When our deliverers can expect the package to be ready for pickup |                          `dateTime`                          |                -                 |
+| `must_be_delivered_at`   |                   yes                    | When the order should be delivered at                        |                          `dateiIme`                          |                -                 |
+| `payment_method`         |                   yes                    | What kind of payment method that should be used, payments methods starting with `levererat` is our own payment solutions. If you already have a payment solution in place, you could use any of the `company_` payment methods | `levererat_swish` `company_swish` `company_invoice` `company_card` |                -                 |
+| `company_swish_ref_id`   |  if `payment_method` is `company_swish`  | This field is used to keep track of orders                   |                        `string(191)`                         |                                  |
+| `company_invoice_ref_id` | if `payment_method` is `company_invoice` | This field is used to keep track of orders                   |                        `string(191)`                         |              `null`              |
+| `company_card_ref_id`    |  If `payment_method` is `company_card`   | This field is used to keep track of orders                   |                        `string(191)`                         |              `null`              |
+| `creator_name`           |                    no                    | The name of the main customer (Our deliverer will see this field) |                     `string(191)` `null`                     |  Name of authenticated account   |
+| `creator_address`        |                    no                    | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |                     `string(191)` `null`                     | Address of authenticated account |
+| `creator_phone`          |                    no                    | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |                     `string(191)` `null`                     |  Phone of authenticated account  |
+
+#### Example response `https://api.levererat.app/partners/v1/orders`
+
+```json
+{
+    "order": {
+        "uuid": "922bc46f-1571-4be9-85f9-039360e0b6c6",
+        "simple_order_number": "86-12-2",
+        "status": "accepted_by_company",
+        "payment_method": "company_invoice",
+        "company_swish_ref_id": null,
+        "company_invoice_ref_id": 'Fortnox-invoice-29192',
+        "company_card_ref_id": null,
+        "payload": "[]",
+        "contact_name": "Mrs. Mya Haag II",
+        "contact_phone": "+4148750894379",
+        "contact_address": "2936 Sherwood Creek",
+        "creator_name": "creator_name_override",
+        "creator_phone": "+133777",
+        "creator_address": "creator_address_override",
+        "must_be_delivered_at": "2020-12-04 22:40:38",
+        "pickup_ready_at": "2020-12-04 22:40:38",
+        "accepted_by_deliverer_at": null,
+        "picked_up_by_deliverer_at": null,
+        "delivered_at": null,
+        "contact_unidentified_at": null,
+        "created_at": "2020-12-05 12:12:48",
+        "updated_at": "2020-12-05 12:12:48"
     }
 }
 ```

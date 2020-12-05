@@ -56,7 +56,7 @@ The `Access-Token` is bound to your account and is accessible after you sign in 
 
 All features available for the partner integration will be listed below
 
-| Namespace | Base uri  | Docs and examples           |
+| Namespace | Base URI  | Docs and examples           |
 | --------- | --------- | --------------------------- |
 | order     | `/orders` | [Read more](docs/orders.md) |
 
