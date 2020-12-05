@@ -12,15 +12,15 @@
 
 #### Parameters
 
-| Name               | Required? | Description                   |                       possible values                        |   Default    |
-| ------------------ | :-------: | ----------------------------- | :----------------------------------------------------------: | :----------: |
-| `statusFilter`     |    No     | Filter result based on filter | `all ` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` ` collected_by_deliverer` `picked_up_by_deliverer` |    `all`     |
-| `orderBy`          |    No     | Sort results based on column  | ` created_at`  ` updated_at` ` must_be_delivered_at` ` pickup_ready_at`  ` accepted_by_deliverer_at` ` picked_up_by_deliverer_at` ` delivered_at` | `created_at` |
-| `orderByDirection` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
+| Name                 | Required? | Description                   |                       possible values                        |   Default    |
+| -------------------- | :-------: | ----------------------------- | :----------------------------------------------------------: | :----------: |
+| `status_filter`      |    No     | Filter result based on filter | `all ` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` ` collected_by_deliverer` `picked_up_by_deliverer` |    `all`     |
+| `order_by`           |    No     | Sort results based on column  | ` created_at`  ` updated_at` ` must_be_delivered_at` ` pickup_ready_at`  ` accepted_by_deliverer_at` ` picked_up_by_deliverer_at` ` delivered_at` | `created_at` |
+| `order_by_direction` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
 
 
-#### Example response `https://api.levererat.app/partners/v1/orders`
+#### Example response `GET https://api.levererat.app/partners/v1/orders`
 
 ```json
 {
@@ -94,7 +94,7 @@
 
 _No parameters_
 
-#### Example response `https://api.levererat.app/partners/v1/orders/922b...`
+#### Example response `GET https://api.levererat.app/partners/v1/orders/922b...`
 
 ```json
 {
@@ -145,7 +145,7 @@ _No parameters_
 | `creator_address`        |                    no                    | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |                     `string(191)` `null`                     | Address of authenticated account |
 | `creator_phone`          |                    no                    | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |                     `string(191)` `null`                     |  Phone of authenticated account  |
 
-#### Example response `https://api.levererat.app/partners/v1/orders`
+#### Example response `POST https://api.levererat.app/partners/v1/orders`
 
 ```json
 {
