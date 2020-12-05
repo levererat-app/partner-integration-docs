@@ -155,7 +155,7 @@ _No parameters_
         "status": "accepted_by_company",
         "payment_method": "company_invoice",
         "company_swish_ref_id": null,
-        "company_invoice_ref_id": 'Fortnox-invoice-29192',
+        "company_invoice_ref_id": "Fortnox-invoice-29192",
         "company_card_ref_id": null,
         "payload": "[]",
         "contact_name": "Mrs. Mya Haag II",
