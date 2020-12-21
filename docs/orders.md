@@ -14,8 +14,8 @@
 
 | Name                 | Required? | Description                   |                       possible values                        |   Default    |
 | -------------------- | :-------: | ----------------------------- | :----------------------------------------------------------: | :----------: |
-| `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` `collected_by_deliverer` `picked_up_by_deliverer` |    `all`     |
-| `order_by`           |    No     | Sort results based on column  | `created_at` `updated_at` `must_be_delivered_at` `pickup_ready_at` `accepted_by_deliverer_at` `picked_up_by_deliverer_at` `delivered_at` | `created_at` |
+| `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` |    `all`     |
+| `order_by`           |    No     | Sort results based on column  | `created_at` `updated_at` `must_be_delivered_at` `pickup_ready_at` `accepted_by_deliverer_at`  `delivered_at` | `created_at` |
 | `order_by_direction` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
 
@@ -44,7 +44,6 @@
                 "must_be_delivered_at": "2020-12-05 13:22:47",
                 "pickup_ready_at": "2020-12-05 13:12:47",
                 "accepted_by_deliverer_at": null,
-                "picked_up_by_deliverer_at": null,
                 "delivered_at": null,
                 "contact_unidentified_at": null,
                 "created_at": "2020-12-05 12:12:47",
@@ -116,7 +115,6 @@ _No parameters_
         "must_be_delivered_at": "2020-12-05 13:22:49",
         "pickup_ready_at": "2020-12-05 13:12:49",
         "accepted_by_deliverer_at": null,
-        "picked_up_by_deliverer_at": null,
         "delivered_at": null,
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:49",
@@ -167,7 +165,6 @@ _No parameters_
         "must_be_delivered_at": "2020-12-04 22:40:38",
         "pickup_ready_at": "2020-12-04 22:40:38",
         "accepted_by_deliverer_at": null,
-        "picked_up_by_deliverer_at": null,
         "delivered_at": null,
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:48",

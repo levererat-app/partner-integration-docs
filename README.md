@@ -60,4 +60,9 @@ All features available for the partner integration will be listed below
 | --------- | --------- | --------------------------- |
 | order     | `/orders` | [Read more](docs/orders.md) |
 
-.
+
+
+*Changelog*
+
+* 2020-12-23: Removed unused column `picked_up_by_deliverer_at`
+
