@@ -47,7 +47,8 @@
                 "delivered_at": null,
                 "contact_unidentified_at": null,
                 "created_at": "2020-12-05 12:12:47",
-                "updated_at": "2020-12-05 12:12:48"
+                "updated_at": "2020-12-05 12:12:48",
+                "tasks": []
             }
         ]
     },
@@ -118,7 +119,8 @@ _No parameters_
         "delivered_at": null,
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:49",
-        "updated_at": "2020-12-05 12:12:49"
+        "updated_at": "2020-12-05 12:12:49",
+        "tasks": []
     }
 }
 ```
@@ -142,6 +144,7 @@ _No parameters_
 | `creator_name`           |                    no                    | The name of the main customer (Our deliverer will see this field) |                     `string(191)` `null`                     |  Name of authenticated account   |
 | `creator_address`        |                    no                    | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |                     `string(191)` `null`                     | Address of authenticated account |
 | `creator_phone`          |                    no                    | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |                     `string(191)` `null`                     |  Phone of authenticated account  |
+| `tasks`                  |                    no                    | Add one or more tasks to the given order, if no tasks are given, a default task will be created upon Levererat accepting the order |                [Task Model](orders/tasks.md)                 |               null               |
 
 #### Example response `POST https://api.levererat.app/partners/v1/orders`
 
@@ -168,7 +171,8 @@ _No parameters_
         "delivered_at": null,
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:48",
-        "updated_at": "2020-12-05 12:12:48"
+        "updated_at": "2020-12-05 12:12:48",
+        "tasks": []
     }
 }
 ```

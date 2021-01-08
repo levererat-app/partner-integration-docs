@@ -64,5 +64,7 @@ All features available for the partner integration will be listed below
 
 *Changelog*
 
-* 2020-12-23: Removed unused column `picked_up_by_deliverer_at`
+* 2021-01-09
+	* Removed unused column `picked_up_by_deliverer_at` and status types `collected_by_deliverer` 
+	* Added new related model `Task` to `order`
 
