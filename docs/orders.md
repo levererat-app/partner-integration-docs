@@ -14,8 +14,8 @@
 
 | Name                 | Required? | Description                   |                       possible values                        |   Default    |
 | -------------------- | :-------: | ----------------------------- | :----------------------------------------------------------: | :----------: |
-| `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` `collected_by_deliverer` `picked_up_by_deliverer` |    `all`     |
-| `order_by`           |    No     | Sort results based on column  | `created_at` `updated_at` `must_be_delivered_at` `pickup_ready_at` `accepted_by_deliverer_at` `picked_up_by_deliverer_at` `delivered_at` | `created_at` |
+| `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` |    `all`     |
+| `order_by`           |    No     | Sort results based on column  | `created_at` `updated_at` `must_be_delivered_at` `pickup_ready_at` `accepted_by_deliverer_at`  `delivered_at` | `created_at` |
 | `order_by_direction` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
 
@@ -44,11 +44,11 @@
                 "must_be_delivered_at": "2020-12-05 13:22:47",
                 "pickup_ready_at": "2020-12-05 13:12:47",
                 "accepted_by_deliverer_at": null,
-                "picked_up_by_deliverer_at": null,
                 "delivered_at": null,
                 "contact_unidentified_at": null,
                 "created_at": "2020-12-05 12:12:47",
-                "updated_at": "2020-12-05 12:12:48"
+                "updated_at": "2020-12-05 12:12:48",
+                "tasks": []
             }
         ]
     },
@@ -116,11 +116,11 @@ _No parameters_
         "must_be_delivered_at": "2020-12-05 13:22:49",
         "pickup_ready_at": "2020-12-05 13:12:49",
         "accepted_by_deliverer_at": null,
-        "picked_up_by_deliverer_at": null,
         "delivered_at": null,
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:49",
-        "updated_at": "2020-12-05 12:12:49"
+        "updated_at": "2020-12-05 12:12:49",
+        "tasks": []
     }
 }
 ```
@@ -144,6 +144,7 @@ _No parameters_
 | `creator_name`           |                    no                    | The name of the main customer (Our deliverer will see this field) |                     `string(191)` `null`                     |  Name of authenticated account   |
 | `creator_address`        |                    no                    | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |                     `string(191)` `null`                     | Address of authenticated account |
 | `creator_phone`          |                    no                    | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |                     `string(191)` `null`                     |  Phone of authenticated account  |
+| `tasks`                  |                    no                    | Add one or more tasks to the given order, if no tasks are given, a default task will be created upon Levererat accepting the order |                [Task Model](orders/tasks.md)                 |               null               |
 
 #### Example response `POST https://api.levererat.app/partners/v1/orders`
 
@@ -167,11 +168,11 @@ _No parameters_
         "must_be_delivered_at": "2020-12-04 22:40:38",
         "pickup_ready_at": "2020-12-04 22:40:38",
         "accepted_by_deliverer_at": null,
-        "picked_up_by_deliverer_at": null,
         "delivered_at": null,
         "contact_unidentified_at": null,
         "created_at": "2020-12-05 12:12:48",
-        "updated_at": "2020-12-05 12:12:48"
+        "updated_at": "2020-12-05 12:12:48",
+        "tasks": []
     }
 }
 ```
