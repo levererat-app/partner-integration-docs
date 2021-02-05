@@ -13,7 +13,7 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
 | `pickup_contact_phone` |    no     | E164 Phone number                                            |                     `string(191)` `null`                     |    `order.creator_phone`     |
 | `pickup_before_at`     |    no     | When our deliverers can expect the package to be ready for pickup _(This field may be changed by Levererat staff )_ |                     `string(191)` `null`                     |   `order.pickup_ready_at`    |
 | `deliver_before_at`    |    no     | When the task should be delivered at _(This field may be changed by Levererat staff )_ |                     `string(191)` `null`                     | `order.must_be_delivered_at` |
-| `callback_url`         |    no     | If a valid URL is provided, every time a task changes status, a  `POST`  request will be made, containing this payload `{"order_uuid": "44f3...", "task_uuid": "44f3...", "new_status": "picked_up"}` .  Timeout is set to `15 seconds`, and a total of `5 attempts` will be made over a `5 hour period` before the job permanently fails |                    `string(64555)` `null`                    |            `null`            |
+| `callback_url`         |    no     | If a valid URL is provided, every time a task changes status, a  `POST`  request will be made, containing this payload `{"order_uuid": "44f3...", "task_uuid": "44f3...", "new_status": "picked_up", "updated_at": "2021-01-05 15:45:32"}` .  Timeout is set to `15 seconds`, and a total of `5 attempts` will be made over a `5 hour period` before the job permanently fails |                    `string(64555)` `null`                    |            `null`            |
 
 #### Example response `POST https://api.levererat.app/partners/v1/orders`
 
@@ -65,7 +65,7 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
 }
 ```
 
-#### <a id="here"></a Task Status
+#### <a id="here"></a> Task Status
 
 | Status      | Description                                                 |
 | ----------- | ----------------------------------------------------------- |

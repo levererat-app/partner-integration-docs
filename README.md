@@ -64,6 +64,9 @@ All features available for the partner integration will be listed below
 
 *Changelog*
 
+* 2021-02-05
+	* added new column to task http callback `updated_at` 
+
 * 2021-01-09
 	* Removed unused column `picked_up_by_deliverer_at` and status types `collected_by_deliverer` 
 	* Added new related model `Task` to `order`
