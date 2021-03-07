@@ -74,6 +74,7 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
 | ----------- | ----------------------------------------------------------- |
 | `pending`   | Initial task status when created                            |
 | `assigned`  | A Levererat coordinator has assigned the task to an courier |
+| `started`   | The task has been started by the assigned courier           |
 | `abandoned` | The task has been abandoned by the assigned courier         |
 | `accepted`  | The task has been accepted by the assigned courier          |
 | `picked_up` | The task payload has been picked up by the courier          |
