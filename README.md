@@ -41,10 +41,9 @@ Our API can return 8 different status codes
 
 All relevant `400 Request Failed` error codes will be listed below
 
-| code | Meaning                                           |
-| ---- | ------------------------------------------------- |
-| 36   | The swish payment is not enabled for this route   |
-| 37   | missing sufficient permissions to view this order |
+| Code | Meaning                                      |
+| ---- | -------------------------------------------- |
+| 37   | missing sufficient permissions to view order |
 
 ### <a id="authenticate"></a> Authenticate
 
@@ -64,6 +63,12 @@ All features available for the partner integration will be listed below
 
 *Changelog*
 
+* 2021-04-07
+  * Removed unused attributes from `Order` `payment_method` `company_swish_ref_id` `company_invoice_ref_id` `company_card_ref_id` . `payment_method` can be replaced with `test`,  
+  * New order attribute `test` replacement for `payment_method` and will only be checked for the value "test" for legacy reasons
+  * Task status `started` was removed because it was redundant.
+  * Added new RO field to tasks `siblings` 
+  * Orders have three new fields `contact_address_postal_code` ,  `custom_instruction` and `callback_url`. Tasks will inherit these fields if they are empty.
 * 2021-02-10
   * added new TaskModel field `custom_instruction`  [read more here](docs/orders/tasks.md)
 * 2021-02-09

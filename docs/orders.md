@@ -14,7 +14,7 @@
 
 | Name                 | Required? | Description                   |                       possible values                        |   Default    |
 | -------------------- | :-------: | ----------------------------- | :----------------------------------------------------------: | :----------: |
-| `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `declined_by_payment` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` |    `all`     |
+| `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` |    `all`     |
 | `order_by`           |    No     | Sort results based on column  | `created_at` `updated_at` `must_be_delivered_at` `pickup_ready_at` `accepted_by_deliverer_at`  `delivered_at` | `created_at` |
 | `order_by_direction` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
 
@@ -27,27 +27,24 @@
     "orders": {
         "data": [
             {
-                "uuid": "922bc46d-41f0-451b-a6c4-95e83b461456",
-                "simple_order_number": "83-12-2",
+                "uuid": "932385a9-4cff-4b6f-a031-f4a723aed449",
+                "simple_order_number": "67-4-UPP",
                 "status": "accepted_by_company",
-                "payment_method": "levererat_swish",
-                "company_swish_ref_id": null,
-                "company_invoice_ref_id": null,
-                "company_card_ref_id": null,
-                "payload": "Ugh, Serpent!' 'But I'm not myself, you see.' 'I don't think they play at all what had become of me?' Luckily for Alice, the little door: but, alas! the little door about fifteen inches high: she.",
-                "contact_name": "Dashawn",
+                "payload": "I eat one of the Queen said to the part about her repeating 'YOU ARE OLD, FATHER WILLIAM,\"' said the Gryphon: and it sat for a moment to think this a good deal frightened at the top with its head.",
+                "contact_name": "Karli",
                 "contact_phone": "+46701474417",
-                "contact_address": "96950 Blanda Square\nEast Marielleville, OH 53983-1813",
-                "creator_name": "Ryder Rosenbaum",
+                "contact_address": "677 Golden Flats Suite 250\nIciemouth, GA 77108",
+                "contact_address_postal_code": "15621",
+                "creator_name": "Nicole Cronin",
                 "creator_phone": "+46701474417",
-                "creator_address": "127 Rogahn Light Suite 306",
-                "must_be_delivered_at": "2020-12-05 13:22:47",
-                "pickup_ready_at": "2020-12-05 13:12:47",
+                "creator_address": "6515 Bettie Cliff Suite 281",
+                "must_be_delivered_at": "2021-04-07 18:12:36",
+                "pickup_ready_at": "2021-04-07 18:02:36",
                 "accepted_by_deliverer_at": null,
                 "delivered_at": null,
                 "contact_unidentified_at": null,
-                "created_at": "2020-12-05 12:12:47",
-                "updated_at": "2020-12-05 12:12:48",
+                "created_at": "2021-04-07 17:02:36",
+                "updated_at": "2021-04-07 17:02:36",
                 "tasks": []
             }
         ]
@@ -70,7 +67,7 @@
             },
             {
                 "url": "http:\/\/localhost\/partners\/v1\/orders?page=1",
-                "label": 1,
+                "label": "1",
                 "active": true
             },
             {
@@ -99,27 +96,24 @@ _No parameters_
 ```json
 {
     "order": {
-        "uuid": "922bc46f-aef1-4ab0-b5a6-e97b3fcfe824",
-        "simple_order_number": "88-12-2",
+        "uuid": "932385ad-0494-4d67-9579-284d3c5615b7",
+        "simple_order_number": "73-4-ETP",
         "status": "pending",
-        "payment_method": "levererat_swish",
-        "company_swish_ref_id": null,
-        "company_invoice_ref_id": null,
-        "company_card_ref_id": null,
-        "payload": "All on a little different. But if I'm not the smallest notice of her voice, and see how he can thoroughly enjoy The pepper when he sneezes; For he can thoroughly enjoy The pepper when he sneezes.",
-        "contact_name": "Lance",
+        "payload": "Oh, how I wish you wouldn't keep appearing and vanishing so suddenly: you make one quite giddy.' 'All right,' said the Cat, 'if you don't explain it as to go nearer till she was small enough to look.",
+        "contact_name": "Herminia",
         "contact_phone": "+46701474417",
-        "contact_address": "2188 Rashad Squares\nPort Emmanuelshire, OH 48458-8288",
-        "creator_name": "Hortense Hodkiewicz",
+        "contact_address": "56966 Steuber Divide\nKerluketown, WY 44385",
+        "contact_address_postal_code": "31058",
+        "creator_name": "Prof. Ramiro Connelly",
         "creator_phone": "+46701474417",
-        "creator_address": "622 Zulauf Harbor",
-        "must_be_delivered_at": "2020-12-05 13:22:49",
-        "pickup_ready_at": "2020-12-05 13:12:49",
+        "creator_address": "208 Stokes Roads Suite 397",
+        "must_be_delivered_at": "2021-04-07 18:12:38",
+        "pickup_ready_at": "2021-04-07 18:02:38",
         "accepted_by_deliverer_at": null,
         "delivered_at": null,
         "contact_unidentified_at": null,
-        "created_at": "2020-12-05 12:12:49",
-        "updated_at": "2020-12-05 12:12:49",
+        "created_at": "2021-04-07 17:02:38",
+        "updated_at": "2021-04-07 17:02:38",
         "tasks": []
     }
 }
@@ -129,49 +123,46 @@ _No parameters_
 
 #### Parameters
 
-| Name                     |                Required?                 | Description                                                  |                       possible values                        |             Default              |
-| ------------------------ | :--------------------------------------: | ------------------------------------------------------------ | :----------------------------------------------------------: | :------------------------------: |
-| `contact_name`           |                   Yes                    | Name of end customer                                         |                        `string(191)`                         |                -                 |
-| `contact_address`        |                   Yes                    | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |                        `string(191)`                         |                -                 |
-| `contact_phone`          |                   Yes                    | E164 phone number format (+467xxxxx) of end customer         |                        `string(191)`                         |                -                 |
-| `payload`                |                   yes                    | Content of what is going to be delivered, this text is not parsed by levererat.app and will be visible to our deliverers |                         `mediumText`                         |                -                 |
-| `pickup_ready_at`        |                   yes                    | When our deliverers can expect the package to be ready for pickup |                          `dateTime`                          |                -                 |
-| `must_be_delivered_at`   |                   yes                    | When the order should be delivered at                        |                          `dateiIme`                          |                -                 |
-| `payment_method`         |                   yes                    | What payment method you want to use. Payment methods starting with `levererat_` is our own payment solutions. If you already have a payment solution in place, please use any of the `company_` methods. For testing this integration, please use `test` , using `test` wont notify any deliverer or cost anything. | `levererat_swish` `company_swish` `company_invoice` `company_card` `test` |                -                 |
-| `company_swish_ref_id`   |  if `payment_method` is `company_swish`  | This field is used to keep track of orders                   |                        `string(191)`                         |                                  |
-| `company_invoice_ref_id` | if `payment_method` is `company_invoice` | This field is used to keep track of orders                   |                        `string(191)`                         |              `null`              |
-| `company_card_ref_id`    |  If `payment_method` is `company_card`   | This field is used to keep track of orders                   |                        `string(191)`                         |              `null`              |
-| `creator_name`           |                    no                    | The name of the main customer (Our deliverer will see this field) |                     `string(191)` `null`                     |  Name of authenticated account   |
-| `creator_address`        |                    no                    | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |                     `string(191)` `null`                     | Address of authenticated account |
-| `creator_phone`          |                    no                    | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |                     `string(191)` `null`                     |  Phone of authenticated account  |
-| `tasks`                  |                    no                    | Add one or more tasks to the given order, if no tasks are given, a default task will be created upon Levererat accepting the order |                [Task Model](orders/tasks.md)                 |               null               |
+| Name                          | Required? | Description                                                  |        possible values        |             Default              |
+| ----------------------------- | :-------: | ------------------------------------------------------------ | :---------------------------: | :------------------------------: |
+| `contact_name`                |    Yes    | Name of end customer                                         |         `string(191)`         |                -                 |
+| `contact_address`             |    Yes    | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |         `string(191)`         |                -                 |
+| `contact_address_postal_code` |    no     | 5 digit postal code, for sorting                             |          `string(5)`          |               null               |
+| `contact_phone`               |    Yes    | E164 phone number format (+467xxxxx) of end customer         |         `string(191)`         |                -                 |
+| `payload`                     |    yes    | Content of what is going to be delivered, this text is not parsed by levererat.app and will be visible to our deliverers |         `mediumText`          |                -                 |
+| `pickup_ready_at`             |    yes    | When our deliverers can expect the package to be ready for pickup |          `dateTime`           |                -                 |
+| `must_be_delivered_at`        |    yes    | When the order should be delivered at                        |          `dateiIme`           |                -                 |
+| `test`                        |    no     | Use this to dry-run your order request                       |            `test`             |               null               |
+| `creator_name`                |    no     | The name of the main customer (Our deliverer will see this field) |     `string(191)` `null`      |  Name of authenticated account   |
+| `creator_address`             |    no     | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |     `string(191)` `null`      | Address of authenticated account |
+| `creator_phone`               |    no     | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |     `string(191)` `null`      |  Phone of authenticated account  |
+| `tasks`                       |    no     | Add one or more tasks to the given order, if no tasks are given, a default task will be created upon Levererat accepting the order | [Task Model](orders/tasks.md) |               null               |
+| `custom_instruction`          |    no     | All child tasks will inherit this field                      |         `mediumText`          |               null               |
+| `callback_url`                |    no     | All child tasks will inherit this field                      |         `mediumText`          |               null               |
 
 #### Example response `POST https://api.levererat.app/partners/v1/orders`
 
 ```json
 {
     "order": {
-        "uuid": "922bc46f-1571-4be9-85f9-039360e0b6c6",
-        "simple_order_number": "86-12-2",
+        "uuid": "932385ab-4d2d-4ec3-97e3-eca0f59fbaa2",
+        "simple_order_number": "69-12-WJA",
         "status": "accepted_by_company",
-        "payment_method": "company_invoice",
-        "company_swish_ref_id": null,
-        "company_invoice_ref_id": "Fortnox-invoice-29192",
-        "company_card_ref_id": null,
         "payload": "[]",
         "contact_name": "Mrs. Mya Haag II",
         "contact_phone": "+4148750894379",
         "contact_address": "2936 Sherwood Creek",
+        "contact_address_postal_code": null,
         "creator_name": "creator_name_override",
         "creator_phone": "+133777",
         "creator_address": "creator_address_override",
-        "must_be_delivered_at": "2020-12-04 22:40:38",
+        "must_be_delivered_at": "2020-12-04 23:40:38",
         "pickup_ready_at": "2020-12-04 22:40:38",
         "accepted_by_deliverer_at": null,
         "delivered_at": null,
         "contact_unidentified_at": null,
-        "created_at": "2020-12-05 12:12:48",
-        "updated_at": "2020-12-05 12:12:48",
+        "created_at": "2020-12-01 23:40:38",
+        "updated_at": "2020-12-01 23:40:38",
         "tasks": []
     }
 }
