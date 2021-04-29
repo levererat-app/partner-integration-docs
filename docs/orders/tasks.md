@@ -84,13 +84,14 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
 
 #### <a id="taskCallBackUrlPayload"></a> Task Callback Url Payload
 
-| Field                 | Description                                       | Example value                        |
-| --------------------- | ------------------------------------------------- | ------------------------------------ |
-| `order_uuid`          | Order uuid                                        | 9270adbc-ffff-44a5-815e-635ec6b11925 |
-| `task_uuid`           | Task uuid                                         | 9270adbd-10ca-4092-aec8-f3daebf4d498 |
-| `new_status`          | New task status                                   | completed                            |
-| `siblings`            | All sibling task uuids                            | ["9720...", "ab28...."]              |
-| `updated_at`          | When task was updated                             | 2020-05-10 13:37:00                  |
-| `task_result`         | If a task is completed, this field will be filled | Misslyckades - ange kommentar        |
-| `task_result_comment` | If a task is completed, this field will be filled | Punka på bilen                       |
+| Field                  | Description                                       | Example value                        |
+| ---------------------- | ------------------------------------------------- | ------------------------------------ |
+| `order_uuid`           | Order uuid                                        | 9270adbc-ffff-44a5-815e-635ec6b11925 |
+| `task_uuid`            | Task uuid                                         | 9270adbd-10ca-4092-aec8-f3daebf4d498 |
+| `new_status`           | New task status                                   | completed                            |
+| `current_order_status` | State of parent order                             | delivered                            |
+| `siblings`             | All sibling task uuids                            | ["9720...", "ab28...."]              |
+| `updated_at`           | When task was updated                             | 2020-05-10 13:37:00                  |
+| `task_result`          | If a task is completed, this field will be filled | Misslyckades - ange kommentar        |
+| `task_result_comment`  | If a task is completed, this field will be filled | Punka på bilen                       |
 

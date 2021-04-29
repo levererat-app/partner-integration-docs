@@ -125,6 +125,7 @@ _No parameters_
 
 | Name                          | Required? | Description                                                  |        possible values        |             Default              |
 | ----------------------------- | :-------: | ------------------------------------------------------------ | :---------------------------: | :------------------------------: |
+| `total_parcels`               |    No     | How many parcels are provided in the order, only used to help our couriers track the payload |           `int(11)`           |                1                 |
 | `contact_name`                |    Yes    | Name of end customer                                         |         `string(191)`         |                -                 |
 | `contact_address`             |    Yes    | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |         `string(191)`         |                -                 |
 | `contact_address_postal_code` |    no     | 5 digit postal code, for sorting                             |          `string(5)`          |               null               |
