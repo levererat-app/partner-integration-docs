@@ -64,7 +64,7 @@ All features available for the partner integration will be listed below
 *Changelog*
 
 * 2021-04-29
-  * Added new column to order `total_parcels`
+  * Added new column to task`total_parcels`
 * 2021-04-07
   * Removed unused fields from `Order`. The fields are `payment_method` `company_swish_ref_id` `company_invoice_ref_id` `company_card_ref_id` . `payment_method` can be replaced with `test`. 
   * New order attribute `test` replacement for `payment_method` and will only be checked for the value "test" for legacy reasons
