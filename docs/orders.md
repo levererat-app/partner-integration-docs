@@ -179,3 +179,31 @@ _No parameters_
 
 *Note: Child tasks with* `is_end_destination` *set to* `true` *will have its information changed as well*
 
+#### Example response `PUT https://api.levererat.app/partners/v1/orders/9358...`
+
+```json
+{
+    "order": {
+        "uuid": "93585058-f293-4418-b674-4f57ebe676c4",
+        "simple_order_number": "WKL-4-5",
+        "status": "pending",
+        "payload": "New payload",
+        "contact_name": "Mrs. Mya Haag II",
+        "contact_phone": "+4148750894379",
+        "contact_address": "2936 Sherwood Creek",
+        "contact_address_postal_code": "51442",
+        "creator_name": "Prof. Cristal Gaylord Sr.",
+        "creator_phone": "+46701474417",
+        "creator_address": "388 Maximus Stravenue",
+        "must_be_delivered_at": "2021-05-04 00:02:24",
+        "pickup_ready_at": "2021-05-03 23:52:24",
+        "accepted_by_deliverer_at": null,
+        "delivered_at": null,
+        "contact_unidentified_at": null,
+        "created_at": "2021-05-03 22:52:24",
+        "updated_at": "2021-05-03 22:52:24",
+        "tasks": []
+    }
+}
+```
+
