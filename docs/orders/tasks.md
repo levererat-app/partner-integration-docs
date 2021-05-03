@@ -15,7 +15,6 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
 | `deliver_before_at`    |    no     | When the task should be delivered at _(This field may be changed by Levererat staff )_ |                     `string(191)` `null`                     | `order.must_be_delivered_at` |
 | `callback_url`         |    no     | If a valid URL is provided, every time a task changes status, a  `POST`  request will be made, containing [this payload](#taskCallBackUrlPayload) .  Timeout is set to `15 seconds`, and a total of `5 attempts` will be made over a `5 hour period` before the job permanently fails |                    `string(64555)` `null`                    |     `order.callback_url`     |
 | `custom_instruction`   |    no     | This will be displayed in red text for our deliverers        |                    `string(64555)` `null`                    |  `order.custom_instruction`  |
-| `total_parcels`        |    no     | How many parcels this route has                              |                          `int(11)`                           |             ´1´              |
 
 #### Example response `POST https://api.levererat.app/partners/v1/orders`
 

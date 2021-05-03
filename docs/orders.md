@@ -129,9 +129,9 @@ _No parameters_
 | `contact_address`             |    Yes    | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |         `string(191)`         |                -                 |
 | `contact_address_postal_code` |    no     | 5 digit postal code, for sorting                             |          `string(5)`          |               null               |
 | `contact_phone`               |    Yes    | E164 phone number format (+467xxxxx) of end customer         |         `string(191)`         |                -                 |
-| `payload`                     |    yes    | Content of what is going to be delivered, this text is not parsed by levererat.app and will be visible to our deliverers |         `mediumText`          |                -                 |
-| `pickup_ready_at`             |    yes    | When our deliverers can expect the package to be ready for pickup |          `dateTime`           |                -                 |
-| `must_be_delivered_at`        |    yes    | When the order should be delivered at                        |          `dateiIme`           |                -                 |
+| `payload`                     |    Yes    | Content of what is going to be delivered, this text is not parsed by levererat.app and will be visible to our couriers |         `mediumText`          |                -                 |
+| `pickup_ready_at`             |    Yes    | When our deliverers can expect the package to be ready for pickup |          `dateTime`           |                -                 |
+| `must_be_delivered_at`        |    Yes    | When the order should be delivered at                        |          `dateiIme`           |                -                 |
 | `test`                        |    no     | Use this to dry-run your order request                       |            `test`             |               null               |
 | `creator_name`                |    no     | The name of the main customer (Our deliverer will see this field) |     `string(191)` `null`      |  Name of authenticated account   |
 | `creator_address`             |    no     | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |     `string(191)` `null`      | Address of authenticated account |

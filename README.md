@@ -37,14 +37,6 @@ Our API can return 8 different status codes
 |     429     | To many requests                      | -       |
 |     500     | Server error                          | -       |
 
-### <a id="error-codes"></a> HTTP 400 Error codes
-
-All relevant `400 Request Failed` error codes will be listed below
-
-| Code | Meaning                                      |
-| ---- | -------------------------------------------- |
-| 37   | missing sufficient permissions to view order |
-
 ### <a id="authenticate"></a> Authenticate
 
 All requests to the endpoint requires an `Access-Token` provided in your request header or as an request parameter.
@@ -55,29 +47,10 @@ The `Access-Token` is bound to your account and is accessible after you sign in 
 
 All features available for the partner integration will be listed below
 
-| Namespace | Base URI  | Docs and examples           |
-| --------- | --------- | --------------------------- |
-| order     | `/orders` | [Read more](docs/orders.md) |
+| Namespace | Base URI                         | Docs and examples           |
+| --------- | -------------------------------- | --------------------------- |
+| order     | `/orders`                        | [Read more](docs/orders.md) |
+| tasks     | `/orders/{uuid}/tasks`           |                             |
+| parcels   | `/orders/{uuid]/{tasks}/parcels` |                             |
 
-
-
-*Changelog*
-
-* 2021-04-29
-  * Added new column to task`total_parcels`
-* 2021-04-07
-  * Removed unused fields from `Order`. The fields are `payment_method` `company_swish_ref_id` `company_invoice_ref_id` `company_card_ref_id` . `payment_method` can be replaced with `test`. 
-  * New order attribute `test` replacement for `payment_method` and will only be checked for the value "test" for legacy reasons
-  * Task status `started` was removed because it was redundant.
-  * Added new RO field to tasks `siblings` 
-  * Orders have three new fields `contact_address_postal_code` ,  `custom_instruction` and `callback_url`. Tasks will inherit these fields if they are empty.
-* 2021-02-10
-  * added new TaskModel field `custom_instruction`  [read more here](docs/orders/tasks.md)
-* 2021-02-09
-  * added two new fields to task http callback `task_result` and `task_result_comment` [read  more here](docs/orders/tasks.md#taskCallBackUrlPayload)
-* 2021-02-05
-	* added new fields to task http callback `updated_at` 
-* 2021-01-09
-	* Removed unused column `picked_up_by_deliverer_at` and status types `collected_by_deliverer` 
-	* Added new related model `Task` to `order`
 
