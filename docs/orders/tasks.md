@@ -1,6 +1,6 @@
 # Task Model
 
-Traditionally Levererat will only handle 1 order per delivery, but sometimes  you may wish to add more tasks to a single order.
+Traditionally Levererat will only handle 1 taskk per delivery, but sometimes  you may wish to add more tasks to a single order.
 
 #### Parameters
 
@@ -49,9 +49,7 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
                 "pickup_contact_phone": "+461337",
                 "callback_url": null,
                 "custom_instruction": "Om vi inte är på plats, kolla bakom den gröna ladan",
-                "siblings": [
-                    "9323894e-05b3-4e1f-be17-de0460bcebac"
-                ]
+                "is_end_destination": false
             },
             {
                 "uuid": "9323894e-05b3-4e1f-be17-de0460bcebac",
@@ -62,9 +60,7 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
                 "pickup_contact_phone": "+133777",
                 "callback_url": "http:\/\/mysite.app\/callback",
                 "custom_instruction": null,
-                "siblings": [
-                    "9323894d-ff8f-49bb-82fd-61a7173fc476"
-                ]
+                "is_end_destination": false
             }
         ]
     }
@@ -90,7 +86,6 @@ Traditionally Levererat will only handle 1 order per delivery, but sometimes  yo
 | `task_uuid`            | Task uuid                                         | 9270adbd-10ca-4092-aec8-f3daebf4d498 |
 | `new_status`           | New task status                                   | completed                            |
 | `current_order_status` | State of parent order                             | delivered                            |
-| `siblings`             | All sibling task uuids                            | ["9720...", "ab28...."]              |
 | `updated_at`           | When task was updated                             | 2020-05-10 13:37:00                  |
 | `task_result`          | If a task is completed, this field will be filled | Misslyckades - ange kommentar        |
 | `task_result_comment`  | If a task is completed, this field will be filled | Punka på bilen                       |

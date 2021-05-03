@@ -2,11 +2,12 @@
 
 ## <a id="routes"></a> Routes
 
-| method | uri                |
-| :----- | :----------------- |
-| `GET`  | `/orders`          |
-| `GET`  | `/orders/{uuidv4}` |
-| `POST` | `/orders`          |
+| Thing                      | Method | URI                |
+| -------------------------- | :----- | :----------------- |
+| [List all orders](#index)  | `GET`  | `/orders`          |
+| [Get order by UUID](#show) | `GET`  | `/orders/{uuidv4}` |
+| [Store new order](#store)  | `POST` | `/orders`          |
+| [Update order](#put)       | `PUT`  | `/orders/{uuidv4}` |
 
 ### <a id="index"></a> `GET /orders` 
 
@@ -17,8 +18,6 @@
 | `status_filter`      |    No     | Filter result based on filter | `all` `pending` `delivered` `accepted_by_company` `declined_by_company` `accepted_by_deliverer` `declined_by_deliverer` |    `all`     |
 | `order_by`           |    No     | Sort results based on column  | `created_at` `updated_at` `must_be_delivered_at` `pickup_ready_at` `accepted_by_deliverer_at`  `delivered_at` | `created_at` |
 | `order_by_direction` |    No     | Ascend or descend results     |                         `asc` `desc`                         |    `asc`     |
-
-
 
 #### Example response `GET https://api.levererat.app/partners/v1/orders`
 
@@ -119,7 +118,7 @@ _No parameters_
 }
 ```
 
-### <a id="show"></a> `POST /orders` 
+### <a id="store"></a> `POST /orders` 
 
 #### Parameters
 
@@ -127,12 +126,12 @@ _No parameters_
 | ----------------------------- | :-------: | ------------------------------------------------------------ | :---------------------------: | :------------------------------: |
 | `contact_name`                |    Yes    | Name of end customer                                         |         `string(191)`         |                -                 |
 | `contact_address`             |    Yes    | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |         `string(191)`         |                -                 |
-| `contact_address_postal_code` |    no     | 5 digit postal code, for sorting                             |          `string(5)`          |               null               |
+| `contact_address_postal_code` |    no     | 5 digit postal code, for sorting                             |          `string(5)`          |              `null`              |
 | `contact_phone`               |    Yes    | E164 phone number format (+467xxxxx) of end customer         |         `string(191)`         |                -                 |
 | `payload`                     |    Yes    | Content of what is going to be delivered, this text is not parsed by levererat.app and will be visible to our couriers |         `mediumText`          |                -                 |
 | `pickup_ready_at`             |    Yes    | When our deliverers can expect the package to be ready for pickup |          `dateTime`           |                -                 |
 | `must_be_delivered_at`        |    Yes    | When the order should be delivered at                        |          `dateiIme`           |                -                 |
-| `test`                        |    no     | Use this to dry-run your order request                       |            `test`             |               null               |
+| `test`                        |    no     | Use this to dry-run your order request                       |            `test`             |              `null`              |
 | `creator_name`                |    no     | The name of the main customer (Our deliverer will see this field) |     `string(191)` `null`      |  Name of authenticated account   |
 | `creator_address`             |    no     | Fully qualified address of the main customer (Parsed via Google Maps Distance matrix API) (Our deliverer will see this field) |     `string(191)` `null`      | Address of authenticated account |
 | `creator_phone`               |    no     | E164 phone number format (+467xxxxx) of main customer (Our deliverers will see this field) |     `string(191)` `null`      |  Phone of authenticated account  |
@@ -167,3 +166,16 @@ _No parameters_
     }
 }
 ```
+
+### <a id="put"></a> `PUT /orders/{uuidv4}` 
+
+#### Parameters
+
+| Name              | Required? | Description                                                  | possible values | Default |
+| ----------------- | :-------: | ------------------------------------------------------------ | :-------------: | :-----: |
+| `contact_name`    |    No     | Name of end customer                                         |  `string(191)`  |    -    |
+| `contact_phone`   |    No     | E164 phone number format (+467xxxxx) of end customer         |  `string(191)`  |    -    |
+| `contact_address` |    No     | Fully qualified address of end customer (Parsed via Google Maps Distance matrix API) |  `string(191)`  |    -    |
+
+*Note: Child tasks with* `is_end_destination` *set to* `true` *will have its information changed as well*
+

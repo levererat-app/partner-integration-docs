@@ -47,10 +47,9 @@ The `Access-Token` is bound to your account and is accessible after you sign in 
 
 All features available for the partner integration will be listed below
 
-| Namespace | Base URI                         | Docs and examples           |
-| --------- | -------------------------------- | --------------------------- |
-| order     | `/orders`                        | [Read more](docs/orders.md) |
-| tasks     | `/orders/{uuid}/tasks`           |                             |
-| parcels   | `/orders/{uuid]/{tasks}/parcels` |                             |
+| Namespace | Base URI                    | Docs and examples            | Related Models                     |
+| --------- | --------------------------- | ---------------------------- | ---------------------------------- |
+| order     | `/orders`                   | [Read more](docs/orders.md)  | [Task Model](docs/orders/tasks.md) |
+| parcels   | `/tasks/{taskUuid}/parcels` | [Read more](docs/parcels.md) |                                    |
 
 
