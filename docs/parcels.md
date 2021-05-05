@@ -61,7 +61,7 @@ _No parameters_
 
 _No parameters_
 
-_Note:_ Parcels cannot be created if `task.pickup_before_at` is todays date 
+_Note:_ Parcels cannot be created if `task.status` is  `picked_up` or `completed`
 
 #### Example response `POST https://api.levererat.app/partners/v1/tasks/935a277f.../parcels`
 
@@ -85,7 +85,7 @@ _Note:_ Parcels cannot be created if `task.pickup_before_at` is todays date
 
 _No parameters_
 
-_Note:_ Parcels cannot be deleted if `task.pickup_before_at` is todays date or if `collected_at` or `delivered_at` is not `null`
+_Note:_ Parcels cannot be deleted if `task.status` is  `picked_up` or `completed` or if `collected_at` or `delivered_at` is not `null`
 
 #### Example response `DELETE https://api.levererat.app/partners/v1/tasks/935a277f.../parcels/16`
 
