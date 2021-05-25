@@ -51,5 +51,5 @@ All features available for the partner integration will be listed below
 | --------- | --------------------------- | ---------------------------- | ---------------------------------- |
 | order     | `/orders`                   | [Read more](docs/orders.md)  | [Task Model](docs/orders/tasks.md) |
 | parcels   | `/tasks/{taskUuid}/parcels` | [Read more](docs/parcels.md) |                                    |
-
+| prints    | `/prints`                   | [Read more](docs/prints.md)  |                                    |
 
