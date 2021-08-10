@@ -1,17 +1,18 @@
-# Parcels
+# Prints
 
 ## <a id="routes"></a> Routes
 
 | Thing           | Method | URI       |
 | --------------- | :----- | :-------- |
 | [Print](#index) | `GET`  | `/prints` |
-### <a id="index"></a> `GET /prints` 
+
+### <a id="index"></a> `GET /prtins?parcel_ids=[id]:...` 
 
 #### Parameters
 
-| Name         | Required? | Description                     |             possible values             | Default |
-| ------------ | :-------: | ------------------------------- | :-------------------------------------: | :-----: |
-| `parcel_ids` |    Yes    | Ids of parcel to include in pdf | `parcels.id` use `:` to concat multiple |         |
+| Name         | Required? | Description                     |                possible values                 | Default |
+| ------------ | :-------: | ------------------------------- | :--------------------------------------------: | :-----: |
+| `parcel_ids` |    Yes    | Ids of parcel to include in pdf | `parcels.id` use `:` to fetch multiple parcels |         |
 
 
 
