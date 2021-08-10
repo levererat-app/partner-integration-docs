@@ -20,7 +20,7 @@ We provide a RESTful API for our partners.
 
 *For stage/dev*
 
-`https://api.stage.levererat.app/partners/v1`
+`https://stage.api.levererat.app/partners/v1`
 
 ### <a id="rate-limits"></a> Rate limitation
 
