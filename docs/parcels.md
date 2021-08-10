@@ -7,7 +7,7 @@
 | [List all parcels](#index) | `GET`    | `/tasks/{taskUuidv4}/parcels`      |
 | [Get parcel by id](#show)  | `GET`    | `/tasks/{taskUuidv4}/parcels/{id}` |
 | [Store new parcel](#store) | `POST`   | `/tasks/{taskUuidv4}/parcels`      |
-| [Delete parcel](#put)      | `DELETE` | `/tasks/{taskUuidv4}/parcels/{id}` |
+| [Delete parcel](#destroy)  | `DELETE` | `/tasks/{taskUuidv4}/parcels/{id}` |
 
 ### <a id="index"></a> `GET /tasks/{taskUuidv4}/parcels` 
 
@@ -79,7 +79,7 @@ _Note:_ Parcels cannot be created if `task.status` is  `picked_up` or `completed
 }
 ```
 
-### <a id="store"></a> `DELETE /tasks/{taskUuidv4}/parcels/{id}` 
+### <a id="destroy"></a> `DELETE /tasks/{taskUuidv4}/parcels/{id}` 
 
 #### Parameters
 

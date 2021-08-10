@@ -1,6 +1,6 @@
 # Task Model
 
-Traditionally Levererat will only handle 1 taskk per delivery, but sometimes  you may wish to add more tasks to a single order.
+Traditionally Levererat will only handle 1 task per delivery, but sometimes  you may wish to add more tasks to a single order.
 
 #### Parameters
 
@@ -15,6 +15,7 @@ Traditionally Levererat will only handle 1 taskk per delivery, but sometimes  yo
 | `deliver_before_at`    |    no     | When the task should be delivered at _(This field may be changed by Levererat staff )_ |                     `string(191)` `null`                     | `order.must_be_delivered_at` |
 | `callback_url`         |    no     | If a valid URL is provided, every time a task changes status, a  `POST`  request will be made, containing [this payload](#taskCallBackUrlPayload) .  Timeout is set to `15 seconds`, and a total of `5 attempts` will be made over a `5 hour period` before the job permanently fails |                    `string(64555)` `null`                    |     `order.callback_url`     |
 | `custom_instruction`   |    no     | This will be displayed in red text for our deliverers        |                    `string(64555)` `null`                    |  `order.custom_instruction`  |
+| `autocomplete_at_23`   |    no     | If the given task should autocomplete itself 23:59 before the day of pickup |                          `boolean`                           |           `false`            |
 
 #### Example response `POST https://api.levererat.app/partners/v1/orders`
 
@@ -49,7 +50,8 @@ Traditionally Levererat will only handle 1 taskk per delivery, but sometimes  yo
                 "pickup_contact_phone": "+461337",
                 "callback_url": null,
                 "custom_instruction": "Om vi inte är på plats, kolla bakom den gröna ladan",
-                "is_end_destination": false
+                "is_end_destination": false,
+                "autocomplete_at_23": false,
             },
             {
                 "uuid": "9323894e-05b3-4e1f-be17-de0460bcebac",
@@ -60,7 +62,8 @@ Traditionally Levererat will only handle 1 taskk per delivery, but sometimes  yo
                 "pickup_contact_phone": "+133777",
                 "callback_url": "http:\/\/mysite.app\/callback",
                 "custom_instruction": null,
-                "is_end_destination": false
+                "is_end_destination": false,
+                "autocomplete_at_23": false,
             }
         ]
     }

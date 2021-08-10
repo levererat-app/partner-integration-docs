@@ -14,13 +14,17 @@ We provide a RESTful API for our partners.
 
 ### <a id="endpoint"></a> Endpoint
 
-The base endpoint for all routes are 
+*For production*
 
 `https://api.levererat.app/partners/v1`
 
+*For stage/dev*
+
+`https://api.stage.levererat.app/partners/v1`
+
 ### <a id="rate-limits"></a> Rate limitation
 
-The  limit is 120 requests per  `Access-Token` per minute
+The  limit is 600 requests per  `Access-Token` per minute
 
 ### <a id="status-code"></a> Status codes
 
@@ -47,9 +51,10 @@ The `Access-Token` is bound to your account and is accessible after you sign in 
 
 All features available for the partner integration will be listed below
 
-| Namespace | Base URI                    | Docs and examples            | Related Models                     |
-| --------- | --------------------------- | ---------------------------- | ---------------------------------- |
-| order     | `/orders`                   | [Read more](docs/orders.md)  | [Task Model](docs/orders/tasks.md) |
-| parcels   | `/tasks/{taskUuid}/parcels` | [Read more](docs/parcels.md) |                                    |
-| prints    | `/prints`                   | [Read more](docs/prints.md)  |                                    |
+| Namespace     | Base URI                      | Docs and examples            | Related Models                     |
+| ------------- | ----------------------------- | ---------------------------- | ---------------------------------- |
+| order         | `/orders`                     | [Read more](docs/orders.md)  | [Task Model](docs/orders/tasks.md) |
+| tasks         | `/tasks`                      | [Read more](docs/tasks.md)   |                                    |
+| tasks.parcels | `/tasks/{taskUuidv4}/parcels` | [Read more](docs/parcels.md) |                                    |
+| prints        | `/prints`                     | [Read more](docs/prints.md)  |                                    |
 
